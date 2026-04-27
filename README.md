@@ -2,6 +2,48 @@
 
 This project is a teaching-ready production-style RAG system for unstructured PDF documents.
 
+rag-mlops-project/
+│
+├── app/
+│   └── streamlit_app.py
+│
+├── src/
+│   ├── loaders.py
+│   ├── ocr.py
+│   ├── metadata.py
+│   ├── chunking.py
+│   ├── embeddings.py
+│   ├── vectorstore.py
+│   ├── rag_chain.py
+│   └── evaluation.py
+│
+├── data/
+│   ├── raw/
+│   ├── processed/
+│   └── sample_docs/
+│
+├── vectorstore/
+│   └── faiss_index/
+│
+├── tests/
+│   ├── test_chunking.py
+│   ├── test_metadata.py
+│   ├── test_retrieval.py
+│   └── test_rag_answer.py
+│
+├── evaluation/
+│   ├── golden_questions.csv
+│   └── eval_results.csv
+│
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+│
+├── requirements.txt
+├── README.md
+├── .env.example
+└── Dockerfile
+
 ## What it does
 
 - Loads PDF documents
