@@ -13,23 +13,37 @@ def format_context(docs: List[Document]) -> str:
     return "\n\n".join(blocks)
 
 
-def build_prompt(question: str, docs: List[Document]) -> str:
+def build_prompt(question, docs):
     context = format_context(docs)
+
     return f"""
-Use ONLY the context below to answer the question.
-If the answer is not present in the context, say: "I don't know based on the uploaded documents."
+        You MUST answer using the context below.
 
-Context:
-{context}
+        Context:
+        {context}
 
-Question:
-{question}
+        Question:
+        {question}
 
-Return:
-1. Direct answer
-2. Evidence
-3. Sources with file name and page number
-"""
+        Instructions:
+        - Give a clear direct answer.
+        - If the answer is not found, say: "I don't know based on the document".
+        - Then show supporting evidence.
+        - Then list sources with page numbers.
+
+        Format your answer like this:
+
+        Direct Answer:
+        \\n\n
+        - <your answer here>
+
+        Evidence:
+        \\n\\n
+        - <supporting text>
+
+        Sources:
+        - file name + page number
+        """
 
 
 def answer_question(llm, retriever, question: str) -> Tuple[str, List[Document]]:

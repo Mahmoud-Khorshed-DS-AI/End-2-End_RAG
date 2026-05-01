@@ -28,9 +28,25 @@ with st.sidebar:
 
 uploaded = st.file_uploader("Upload PDF", type=["pdf"])
 
+from pathlib import Path
+import sys
+import streamlit as st
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.append(str(ROOT))
+
+DATA_RAW_DIR = ROOT / "data" / "raw"
+INDEX_DIR = ROOT / "vectorstore" / "faiss_index"
+
+DATA_RAW_DIR.mkdir(parents=True, exist_ok=True)
+INDEX_DIR.mkdir(parents=True, exist_ok=True)
+
 if uploaded:
-    raw_path = ROOT / "data" / "raw" / uploaded.name
-    raw_path.write_bytes(uploaded.read())
+    # raw_dir = ROOT / "data" / "raw"
+    # raw_dir.mkdir(parents=True, exist_ok=True)
+
+    raw_path = DATA_RAW_DIR / uploaded.name
+    raw_path.write_bytes(uploaded.getbuffer())
 
     if st.button("Build / Rebuild Index"):
         with st.spinner("Reading PDF, extracting text/OCR, chunking, embedding, and saving FAISS..."):
