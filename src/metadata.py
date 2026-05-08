@@ -21,3 +21,8 @@ def add_page_descriptions(docs: List[Document]) -> List[Document]:
     for doc in docs:
         doc.metadata["page_description"] = describe_page(doc.page_content)
     return docs
+
+
+# Task 
+## 1- write scripts  / repo structre / Setups .
+## 2- Apply metadata script using llm summarizer instead of the simple deterministic one.
