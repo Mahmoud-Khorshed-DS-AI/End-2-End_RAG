@@ -24,4 +24,5 @@ dependencies = [
     "transformers==4.46.3",
     "tokenizers==0.20.3",
     "azure-ai-inference>=1.0.0b9",
+    "scikit-learn>=1.8.0",
 ]

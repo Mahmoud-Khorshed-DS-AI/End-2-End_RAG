@@ -78,4 +78,4 @@ print("gpt called")
 #                 {"role": "user", "content": "What is Graph DB?"}
 #             ]))
 
-print(call_openai_images("..\data\raw\family.jfif"))
+print(call_openai_images("data/raw/family.jfif"))

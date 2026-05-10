@@ -3,6 +3,7 @@
 3- GitHub with VS Code (CI/CD)(Clone - pull - commit + push - branch) ✅
 4- env file ✅
 4- MLops Docker  (DEV - TEst/Staging - PROd)  ✅
-5- WSL + Ubuntu
-6- LLMops Basics (Deployment)
+5- WSL + Ubuntu ✅
+6- Sync UV with WSL ✅
 7- End to End Project RAG with Repo structure
+8- LLMops Basics (Deployment)
