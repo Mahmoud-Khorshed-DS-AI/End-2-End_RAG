@@ -73,9 +73,9 @@ def call_openai_chat(messages, model="openai/gpt-4o", temperature=0.1):
     return response.choices[0].message.content
 
 print("gpt called")
-# print(call_openai_chat([
-#                 {"role": "system", "content": "You are a helpful instructor."},
-#                 {"role": "user", "content": "What is Graph DB?"}
-#             ]))
+print(call_openai_chat([
+                {"role": "system", "content": "You are a helpful instructor."},
+                {"role": "user", "content": "What is Graph DB?"}
+            ]))
 
-print(call_openai_images("data/raw/family.jfif"))
+# print(call_openai_images("data/raw/family.jfif"))
