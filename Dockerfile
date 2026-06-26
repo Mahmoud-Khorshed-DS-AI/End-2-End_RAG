@@ -14,6 +14,10 @@ RUN uv sync --frozen
 
 COPY . .
 
-EXPOSE 8501
+# EXPOSE 8501
 
-CMD ["uv","run","streamlit", "run", "app/streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.headless=true"]
+# CMD ["uv","run","streamlit", "run", "app/streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.headless=true"]
+
+EXPOSE 8000
+
+CMD ["uv", "run", "uvicorn", "app.api:app", "--host", "0.0.0.0", "--port", "8000"]

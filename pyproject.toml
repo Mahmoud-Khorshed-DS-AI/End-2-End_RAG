@@ -25,4 +25,7 @@ dependencies = [
     "tokenizers==0.20.3",
     "azure-ai-inference>=1.0.0b9",
     "scikit-learn>=1.8.0",
+    "fastapi>=0.138.1",
+    "uvicorn>=0.49.0",
+    "python-multipart>=0.0.32",
 ]

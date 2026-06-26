@@ -5,5 +5,5 @@
 4- MLops Docker  (DEV - TEst/Staging - PROd)  ✅
 5- WSL + Ubuntu ✅
 6- Sync UV with WSL ✅
-7- End to End Project RAG with Repo structure
-8- LLMops Basics (Deployment)
+7- End to End Project RAG with Repo structure ✅
+8- LLMops Basics (Deployment) ✅
